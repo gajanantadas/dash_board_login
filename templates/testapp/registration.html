@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{% static 'testapp/style.css' %}">
+</head>
+<body>
+<h3> please register here...!</h3>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% for fm in form %}
+        <p>{{ fm.label_tag }} {{ fm }} {{ fm.errors|striptags }}</p>
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
+{% if messages %}
+    {% for msg in messages %}
+        <small {% if msg.tags %} class="{{ msg.tags }}" {% endif %}>{{ msg }}</small>
+    {% endfor %}
+{% endif %}
+<a href="{% url 'Log_In' %}"><button>LogIn</button></a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'testapp/style.css' %}">
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {% for fm in form %}
+        <p>{{ fm.label_tag }} {{ fm }} {{ fm.errors|striptags }}</p>
+    {% endfor %}
+    <br>
+<input type="submit" value="LogIn">
+</form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+body{
+    margin-top: 6%;
+    text-align: center;
+    background-color:lightseagreen;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+.success{
+    color: red;
+    font-size: 20px;
+}

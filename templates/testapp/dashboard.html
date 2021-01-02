@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="{% static 'testapp/style.css' %}">
+</head>
+<body>
+<h2>Hello Welcome to the my Wold {{ name }}</h2>
+{% if perms.testapp.delete_blog %}
+<input type="button" value="Delete"><br><br>
+    {% else %}
+    <h3>No Delete permission</h3>
+{% endif %}
+{% if perms.testapp.add_blog %}
+<input type="button" value="ADD"><br><br>
+<br><br>
+    {% else %}
+    <h3>NO Add Permission</h3>
+{% endif %}
+<a href="{% url 'Log_Out' %}"><button>LogOut</button></a>
+</body>
+</html>
